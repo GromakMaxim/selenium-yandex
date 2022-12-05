@@ -1,20 +1,15 @@
 package org.example;
 
-import static org.junit.Assert.assertTrue;
+import org.junit.jupiter.api.Test;
+import org.openqa.selenium.interactions.Actions;
 
-import org.junit.Test;
+import java.time.Duration;
 
-/**
- * Unit test for simple App.
- */
-public class AppTest 
-{
-    /**
-     * Rigorous Test :-)
-     */
+
+public class AppTest extends BaseTest{
     @Test
-    public void shouldAnswerWithTrue()
-    {
-        assertTrue( true );
+    public void shouldAnswerWithTrue() {
+        driver.get("https://stackoverflow.com/questions/30707783/java-selenium-webdriver-with-yandex");
+        new Actions(driver).pause(Duration.ofSeconds(5)).perform();
     }
 }
